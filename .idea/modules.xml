@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DecodePro.iml" filepath="$PROJECT_DIR$/DecodePro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWeb/JavaWeb.iml" filepath="$PROJECT_DIR$/JavaWeb/JavaWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module01/Module01.iml" filepath="$PROJECT_DIR$/Module01/Module01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StaticWeb01/StaticWeb01.iml" filepath="$PROJECT_DIR$/StaticWeb01/StaticWeb01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fileuploadserver/fileuploadserver.iml" filepath="$PROJECT_DIR$/fileuploadserver/fileuploadserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring5_practice1/spring5_practice1.iml" filepath="$PROJECT_DIR$/spring5_practice1/spring5_practice1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springMVC_day01_01_start/springMVC_day01_01_start.iml" filepath="$PROJECT_DIR$/springMVC_day01_01_start/springMVC_day01_01_start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_day02_01_response/springmvc_day02_01_response.iml" filepath="$PROJECT_DIR$/springmvc_day02_01_response/springmvc_day02_01_response.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_day02_02_fileupload/springmvc_day02_02_fileupload.iml" filepath="$PROJECT_DIR$/springmvc_day02_02_fileupload/springmvc_day02_02_fileupload.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_day02_03_exception/springmvc_day02_03_exception.iml" filepath="$PROJECT_DIR$/springmvc_day02_03_exception/springmvc_day02_03_exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_day02_04_intercepter/springmvc_day02_04_intercepter.iml" filepath="$PROJECT_DIR$/springmvc_day02_04_intercepter/springmvc_day02_04_intercepter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_ssm/springmvc_ssm.iml" filepath="$PROJECT_DIR$/springmvc_ssm/springmvc_ssm.iml" />
+    </modules>
+  </component>
+</project>

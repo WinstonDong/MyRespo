@@ -11,6 +11,8 @@ import java.util.List;
 public interface AccountDao {
 
     @Select("select * from account")
+    //I made some changessssss
+    //some thing interest
     public List<Account> findAll();
 
     @Insert("insert into account(name,money) values (#{name},#{money})")

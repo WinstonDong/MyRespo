@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!--<context:component-scan base-package="cn.dl" use-default-filters="false">-->
+        <!--<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:include-filter>-->
+    <!--</context:component-scan>-->
+
+    <!--<context:component-scan base-package="cn.dl">-->
+        <!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:exclude-filter>-->
+    <!--</context:component-scan>-->
+
+    <context:component-scan base-package="cn.dl2">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:exclude-filter>
+    </context:component-scan>
+
+    <context:component-scan base-package="cn.dl3">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:exclude-filter>
+    </context:component-scan>
+
+    <context:component-scan base-package="cn.dl4">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:exclude-filter>
+    </context:component-scan>
+
+
+    <!--自动创建代理织入切面-->
+    <!--<aop:aspectj-autoproxy></aop:aspectj-autoproxy>-->
+
+    <aop:config>
+        <!--配置切入点-->
+        <aop:pointcut id="add" expression="execution(* cn.dl2.domain.User.add(..))"></aop:pointcut>
+        <!--配置切面-->
+        <aop:aspect ref="userProxy">
+            <!--前置通知-->
+            <aop:before method="before" pointcut-ref="add"></aop:before>
+            <!--后置通知-->
+            <aop:after-returning method="afterRunning" pointcut-ref="add"></aop:after-returning>
+            <!--环绕通知-->
+            <aop:around method="arroundRunning" pointcut-ref="add"></aop:around>
+            <!--异常通知-->
+            <aop:after-throwing method="exceptionRunning" pointcut-ref="add"></aop:after-throwing>
+            <!--最终通知-->
+            <aop:after method="finalRunning" pointcut-ref="add"></aop:after>
+        </aop:aspect>
+    </aop:config>
+
+    <!--数据库连接池-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="url" value="jdbc:mysql:///test?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT%2B8"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="12345678"></property>
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+    </bean>
+
+    <!--创建事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--注入数据源-->
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <!--注入数据源-->
+    <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
+
+    <!--配置JdbcTemplate对象，注入DataSource-->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <!--注入DataSource-->
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+</beans>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--开启注解扫描-->
+    <context:component-scan base-package="cn.dl"/>
+
+    <!--视图解析器-->
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--配置拦截器-->
+    <mvc:interceptors>
+        <!--配置拦截器-->
+        <mvc:interceptor>
+            <!--要拦截的具体方法-->
+            <mvc:mapping path="/userController/*"/>
+            <!--不要拦截的方法-->
+            <!--<mvc:exclude-mapping path="">-->
+            <bean class="MyInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <!--配置第二个拦截器-->
+    <!--<mvc:interceptors>-->
+        <!--&lt;!&ndash;配置第二个拦截器&ndash;&gt;-->
+        <!--<mvc:interceptor>-->
+            <!--&lt;!&ndash;要拦截的具体方法&ndash;&gt;-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--&lt;!&ndash;不要拦截的方法&ndash;&gt;-->
+            <!--&lt;!&ndash;<mvc:exclude-mapping path="">&ndash;&gt;-->
+            <!--<bean class="MyInterceptor2"/>-->
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
+    <!--开启springMVC框架注解的支持
+        也会将默认的转换器生效-->
+    <mvc:annotation-driven/>
+</beans>
