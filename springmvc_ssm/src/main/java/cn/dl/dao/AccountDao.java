@@ -18,4 +18,8 @@ public interface AccountDao {
 
     @Insert("insert into account(name,money) values (#{name},#{money})")
     public void saveAccount(Account account);
+
+    public void branchMethod();
+
+    public void sampleMethod();
 }
