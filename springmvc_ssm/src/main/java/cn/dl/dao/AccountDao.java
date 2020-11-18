@@ -22,10 +22,4 @@ public interface AccountDao {
     public void branchMethod();
 
     public void sampleMethod();
-
-    //it is nothing really?
-    public void a();
-
-    //cause confict;  test2
-    public void b();
 }
