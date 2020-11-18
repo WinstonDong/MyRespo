@@ -22,4 +22,7 @@ public interface AccountDao {
     public void branchMethod();
 
     public void sampleMethod();
+
+    //it is nothing
+    public void a();
 }
