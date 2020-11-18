@@ -25,4 +25,7 @@ public interface AccountDao {
 
     //it is nothing
     public void a();
+
+    //cause confict;  test2
+    public void b();
 }
