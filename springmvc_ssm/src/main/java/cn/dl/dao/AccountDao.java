@@ -23,6 +23,6 @@ public interface AccountDao {
 
     public void sampleMethod();
 
-    //it is nothing
+    //it is nothing really?
     public void a();
 }

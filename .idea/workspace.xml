@@ -329,7 +329,7 @@
     <property name="SearchEverywhereHistoryKey" value="tx_isolation&#9;PSI&#9;JAVA://com.mchange.v2.c3p0.impl.C3P0PooledConnection#dflt_txn_isolation&#10;Controller&#9;ACTION&#9;grails.goto.controller&#10;SessionA&#9;PSI&#9;JAVA://org.springframework.web.bind.annotation.SessionAttributes&#10;Model&#9;PSI&#9;JAVA://org.springframework.ui.Model&#10;Converter&#9;FILE&#9;jar:///Users/dongliang/.m2/repository/org/springframework/spring-core/5.0.2.RELEASE/spring-core-5.0.2.RELEASE.jar!/org/springframework/cglib/core/Converter.class&#10;Convert&#9;PSI&#9;JAVA://com.sun.tools.javac.util.Convert" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1605679068038" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1605686256696" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
