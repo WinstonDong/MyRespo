@@ -23,7 +23,6 @@ public interface AccountDao {
 
     public void sampleMethod();
 
-
     //aaaaaaaaaaaaaabbbbbbbbbb
     public void a();
 }
